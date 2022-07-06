@@ -17,6 +17,8 @@ public class FinishLineCollider : MonoBehaviour
 
             paintWall.SetActive(true);
             other.gameObject.transform.position = new Vector3(1.31f, 0.03759584f, 48.05179f);
+
+            _main.GetComponent<RankManager>()._isFinish = true;
         }
 
     }

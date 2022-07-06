@@ -11,6 +11,7 @@ public class RankManager : MonoBehaviour
     
     public bool _isFinish;
     public int _rank ;
+    
     void Rank()
     {
         if (_playerTransform.position.z<_finishLine.position.z)
@@ -19,13 +20,21 @@ public class RankManager : MonoBehaviour
             {
                 if (item.position.z> _playerTransform.position.z)
                 {
-                    _rank++;
+                   
+                    
+                        _rank++;
+                    
+                    
                 }
                 
             }
-            _rankText.text = $"{_rank + 1}/11";
-            _rank = 0;
-            Debug.Log("a");
+            if (!_isFinish)
+            {
+                _rankText.text = $"{_rank + 1}/11";
+                _rank = 0;
+                Debug.Log("a");
+            }
+            
         }
     }
 
