@@ -22,6 +22,7 @@ public class HorizontalObstacleCollider : MonoBehaviour
 
             _playerAnim.SetBool("__isDeath", true);
 
+            _player.GetComponent<PlayerController>()._isRun = false;
             _player.GetComponent<PlayerController>().enabled = false;
 
             Invoke("StartAgain", 2);
@@ -74,7 +75,7 @@ public class HorizontalObstacleCollider : MonoBehaviour
         _player.transform.position = _player.GetComponent<PlayerController>()._playerSpawn;
         _playerAnim.SetBool("__isDeath", false);
         _player.GetComponent<PlayerController>().enabled = true;
-        _playerAnim.SetFloat("__isRun", 0);
+        _playerAnim.SetBool("__isRun", false);
         gameObject.GetComponent<Collider>().enabled = true;
 
     }

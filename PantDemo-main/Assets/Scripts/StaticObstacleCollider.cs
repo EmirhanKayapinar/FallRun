@@ -12,6 +12,7 @@ public class StaticObstacleCollider : MonoBehaviour
             Debug.Log("static");
             collision.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, -5);
             collision.gameObject.GetComponent<Animator>().SetBool("__isHit", true);
+            _player.GetComponent<PlayerController>()._isRun = false;
             _player.GetComponent<PlayerController>().enabled = false;
 
             Invoke("GetUp", 2f);

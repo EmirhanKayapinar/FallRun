@@ -30,7 +30,6 @@ public class PaintManager : MonoBehaviour
             {
                 _paint = true;
 
-
                 var go = Instantiate(_brush, hit.point - Vector3.forward * 0.005f, hit.collider.transform.rotation);
                 go.transform.localScale = Vector3.one * _brushSize;
             }

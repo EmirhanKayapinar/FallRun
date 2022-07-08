@@ -41,10 +41,14 @@ public class PlayerController : MonoBehaviour
 
     public void Hareket(float x)
     {
-        _amount = x * _Xspeed * Time.deltaTime;
+        if (_isRun)
+        {
+            _amount = x * _Xspeed * Time.deltaTime;
 
-        Vector3 target = new Vector3(_amount, transform.position.y, transform.position.z);
-        transform.position = Vector3.Lerp(transform.position, target, _smoot);
+            Vector3 target = new Vector3(_amount, transform.position.y, transform.position.z);
+            transform.position = Vector3.Lerp(transform.position, target, _smoot);
+        }
+        
 
     }
 
