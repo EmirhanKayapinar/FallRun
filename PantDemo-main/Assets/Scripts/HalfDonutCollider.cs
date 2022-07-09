@@ -10,8 +10,11 @@ public class HalfDonutCollider : MonoBehaviour
 
     GameObject _enemy;
     Animator _enemyAnim;
-
-    
+    public Yonler _yonler;
+    private void Awake()
+    {
+        
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -28,7 +31,12 @@ public class HalfDonutCollider : MonoBehaviour
         }
 
     }
-
+    public enum Yonler { Sag,Sol};
+        
+            
+        
+        
+        
     IEnumerator EnemyBekle()
     {
         yield return new WaitForSeconds(2);
@@ -60,18 +68,35 @@ public class HalfDonutCollider : MonoBehaviour
             {
                 Ray _ray = new Ray(_transforms[i].position, transform.TransformDirection(Vector3.left * 0.2f));
                 Debug.DrawRay(_transforms[i].position, transform.TransformDirection(Vector3.left * 0.2f), Color.red);
-                if (Physics.Raycast(_ray, out _hit, 0.2f) && _hit.collider.tag == "Player")
-                {  
-                    _player.gameObject.GetComponent<Rigidbody>().velocity = Vector3.left * 5;
-                   
-                    Debug.Log("bbb");
+                if (Physics.Raycast(_ray, out _hit, 0.2f) && _hit.collider.tag == "Player" )
+                {
+                    if (_yonler==Yonler.Sag)
+                    {
+                        _player.gameObject.GetComponent<Rigidbody>().velocity = Vector3.left * 5;
+
+                        Debug.Log("bbb");
+                    }
+
+                    else
+                    {
+                        _player.gameObject.GetComponent<Rigidbody>().velocity = Vector3.right * 5;
+                    }
+                    
                 }
 
                 if (Physics.Raycast(_ray, out _hit, 0.2f) && _hit.collider.tag == "Enemy")
                 {
-                    _hit.collider.gameObject.GetComponent<Rigidbody>().velocity = Vector3.left * 5;
+                    if (_yonler == Yonler.Sag)
+                    {
+                        _hit.collider.gameObject.GetComponent<Rigidbody>().velocity = Vector3.left * 5;
+
+                        Debug.Log("aaa");
+                    }
+                    else
+                    {
+                        _hit.collider.gameObject.GetComponent<Rigidbody>().velocity = Vector3.right * 5;
+                    }
                     
-                    Debug.Log("aaa");
                 }
             }
             else
@@ -80,16 +105,30 @@ public class HalfDonutCollider : MonoBehaviour
                 Debug.DrawRay(_transforms[i].position, transform.TransformDirection(Vector3.left * 0.4f), Color.red);
                 if (Physics.Raycast(_ray, out _hit, 0.4f)&& _hit.collider.tag=="Player")
                 {
-                    Debug.Log("ccc");
-                    _player.gameObject.GetComponent<Rigidbody>().velocity = Vector3.left * 5;
+                    if (_yonler== Yonler.Sag)
+                    {
+                        Debug.Log("ccc");
+                        _player.gameObject.GetComponent<Rigidbody>().velocity = Vector3.left * 5;
+                    }
+                    else
+                    {
+                        _player.gameObject.GetComponent<Rigidbody>().velocity = Vector3.right * 5;
+                    }
                     
                 }
 
                 if (Physics.Raycast(_ray, out _hit, 0.3f) && _hit.collider.tag == "Enemy")
                 {
-                    Debug.Log("aaa");
-                    _hit.collider.gameObject.GetComponent<Rigidbody>().velocity = Vector3.left * 5;
-                    
+                    if (_yonler==Yonler.Sag)
+                    {
+                        Debug.Log("aaa");
+                        _hit.collider.gameObject.GetComponent<Rigidbody>().velocity = Vector3.left * 5;
+                    }
+
+                    else
+                    {
+                        _hit.collider.gameObject.GetComponent<Rigidbody>().velocity = Vector3.right * 5;
+                    }
                 }
             }
             

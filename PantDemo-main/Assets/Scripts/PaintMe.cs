@@ -12,7 +12,7 @@ public class PaintMe : MonoBehaviour {
 	private RenderTexture TempRenderTarget;
 	private Material ThisMaterial;
 	float _currentTime = 10;
-	[SerializeField] GameObject _rankPanel,_paintWallText,_duvarBoya,_wallText;
+	[SerializeField] GameObject _rankPanel,_paintWallText,_duvarBoya,_wallText,_escPanel;
 	[SerializeField] Text _rankScreenText, _finalRankText,_duvarBoyaText;
 	[SerializeField] GameObject _obje;
 	float _yuzde;
@@ -90,6 +90,7 @@ public class PaintMe : MonoBehaviour {
             _finalRankText.text = $"Rank: {_rankScreenText.text }";
 			_duvarBoyaText.text = $"You painted % {(int)_yuzde} of the wall";
 			_wallText.SetActive(false);
+			Destroy(_escPanel);
         }
 
     }

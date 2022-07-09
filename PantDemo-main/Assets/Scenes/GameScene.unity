@@ -315,6 +315,7 @@ MonoBehaviour:
   _player: {fileID: 27288909}
   _enemyAnim: {fileID: 27288914}
   _enemySpawn: {x: 0, y: 0, z: 0}
+  _isFinish: 0
 --- !u!95 &27288914
 Animator:
   serializedVersion: 3
@@ -1087,7 +1088,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 153}
+  m_AnchoredPosition: {x: 0, y: 114}
   m_SizeDelta: {x: 350, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &227077076
@@ -1578,6 +1579,7 @@ MonoBehaviour:
   _player: {fileID: 322923620}
   _enemyAnim: {fileID: 322923621}
   _enemySpawn: {x: 0, y: 0, z: 0}
+  _isFinish: 0
 --- !u!54 &322923624
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2187,6 +2189,10 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 534047020}
+    - target: {fileID: 6001527408191296625, guid: b1bf9b4de1f833441bd584aa0a53db0c, type: 3}
+      propertyPath: _yonler
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6001527408296206118, guid: b1bf9b4de1f833441bd584aa0a53db0c, type: 3}
       propertyPath: _player
       value: 
@@ -2862,6 +2868,10 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 534047020}
+    - target: {fileID: 6001527408191296625, guid: b1bf9b4de1f833441bd584aa0a53db0c, type: 3}
+      propertyPath: _yonler
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6001527408296206118, guid: b1bf9b4de1f833441bd584aa0a53db0c, type: 3}
       propertyPath: _player
       value: 
@@ -3521,6 +3531,7 @@ MonoBehaviour:
   _player: {fileID: 713709810}
   _enemyAnim: {fileID: 713709815}
   _enemySpawn: {x: 0, y: 0, z: 0}
+  _isFinish: 0
 --- !u!95 &713709815
 Animator:
   serializedVersion: 3
@@ -4106,7 +4117,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 164.83594, y: -89.54114}
+  m_AnchoredPosition: {x: 164.83594, y: -89.541016}
   m_SizeDelta: {x: 104.26703, y: 56.592285}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &886226919
@@ -5106,6 +5117,7 @@ MonoBehaviour:
   _player: {fileID: 1169849185}
   _enemyAnim: {fileID: 1169849190}
   _enemySpawn: {x: 0, y: 0, z: 0}
+  _isFinish: 0
 --- !u!95 &1169849190
 Animator:
   serializedVersion: 3
@@ -5924,6 +5936,7 @@ MonoBehaviour:
   _player: {fileID: 1387747491}
   _enemyAnim: {fileID: 1387747496}
   _enemySpawn: {x: 0, y: 0, z: 0}
+  _isFinish: 0
 --- !u!95 &1387747496
 Animator:
   serializedVersion: 3
@@ -6425,6 +6438,7 @@ MonoBehaviour:
   _player: {fileID: 1437642783}
   _enemyAnim: {fileID: 1437642788}
   _enemySpawn: {x: 0, y: 0, z: 0}
+  _isFinish: 0
 --- !u!95 &1437642788
 Animator:
   serializedVersion: 3
@@ -7239,6 +7253,10 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 534047020}
+    - target: {fileID: 6001527408191296625, guid: b1bf9b4de1f833441bd584aa0a53db0c, type: 3}
+      propertyPath: _yonler
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6001527408296206118, guid: b1bf9b4de1f833441bd584aa0a53db0c, type: 3}
       propertyPath: _player
       value: 
@@ -7318,7 +7336,7 @@ GameObject:
   - component: {fileID: 1546999667}
   - component: {fileID: 1546999666}
   m_Layer: 5
-  m_Name: CloseButton
+  m_Name: ResumeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7339,11 +7357,11 @@ RectTransform:
   m_Father: {fileID: 1631486362}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 102.58667, y: 83.09546}
-  m_Pivot: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0.00097275, y: -596}
+  m_SizeDelta: {x: 350, y: 90}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1546999666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7698,7 +7716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.6320754, g: 0.605242, b: 0.605242, a: 0.6392157}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8011,6 +8029,7 @@ MonoBehaviour:
   _player: {fileID: 1816247500}
   _enemyAnim: {fileID: 1816247505}
   _enemySpawn: {x: 0, y: 0, z: 0}
+  _isFinish: 0
 --- !u!95 &1816247505
 Animator:
   serializedVersion: 3
@@ -8204,6 +8223,7 @@ MonoBehaviour:
   _player: {fileID: 1827248891}
   _enemyAnim: {fileID: 1827248896}
   _enemySpawn: {x: 0, y: 0, z: 0}
+  _isFinish: 0
 --- !u!95 &1827248896
 Animator:
   serializedVersion: 3
@@ -8554,6 +8574,7 @@ MonoBehaviour:
   _player: {fileID: 1902617435}
   _enemyAnim: {fileID: 1902617440}
   _enemySpawn: {x: 0, y: 0, z: 0}
+  _isFinish: 0
 --- !u!95 &1902617440
 Animator:
   serializedVersion: 3
@@ -9276,7 +9297,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: X
+  m_Text: Resume
 --- !u!222 &1962227487
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9646,6 +9667,7 @@ MonoBehaviour:
   _player: {fileID: 2057070738}
   _enemyAnim: {fileID: 2057070743}
   _enemySpawn: {x: 0, y: 0, z: 0}
+  _isFinish: 0
 --- !u!95 &2057070743
 Animator:
   serializedVersion: 3
@@ -9970,6 +9992,10 @@ PrefabInstance:
       propertyPath: _boyaText
       value: 
       objectReference: {fileID: 946950586}
+    - target: {fileID: 1803091767737460451, guid: 53ccfac9552af074cbd83a55b65563c6, type: 3}
+      propertyPath: _escPanel
+      value: 
+      objectReference: {fileID: 1631486361}
     - target: {fileID: 1803091767737460451, guid: 53ccfac9552af074cbd83a55b65563c6, type: 3}
       propertyPath: _wallText
       value: 
