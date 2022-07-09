@@ -12,7 +12,7 @@ public class EnemyCollider : MonoBehaviour
     IEnumerator EnemyBekle()
     {
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1f);
         gameObject.GetComponent<Transform>().position = _enemyControl._enemySpawn ;
         
         _enemyAnim.SetBool("__isDeath", false);
@@ -31,7 +31,7 @@ public class EnemyCollider : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("DikeyTuzak")|| collision.gameObject.CompareTag("Water")  || collision.gameObject.CompareTag("RotatorStick"))
+        if (collision.gameObject.CompareTag("DikeyTuzak")|| collision.gameObject.CompareTag("RotatorStick"))
         {
             
             _rigid.velocity = Vector3.back * 5;
@@ -41,6 +41,25 @@ public class EnemyCollider : MonoBehaviour
             _enemyControl.enabled = false;
 
             StartCoroutine(EnemyBekle());
+        }
+        if (collision.gameObject.CompareTag("Water"))
+        {
+            if (_enemyAnim.GetBool("__isHit"))
+            {
+                _enemyControl.enabled = false;
+
+                StartCoroutine(EnemyBekle());
+            }
+
+            else
+            {
+                _enemyAnim.SetBool("__isDeath", true);
+
+                _enemyControl.enabled = false;
+
+                StartCoroutine(EnemyBekle());
+            }
+            
         }
 
         if (collision.gameObject.CompareTag("SagDonut") || collision.gameObject.CompareTag("SolDonut")|| collision.gameObject.CompareTag("SagTuzak")||collision.gameObject.CompareTag("SolTuzak"))
