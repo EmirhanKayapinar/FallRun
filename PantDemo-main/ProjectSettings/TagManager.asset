@@ -26,6 +26,7 @@ TagManager:
   - SolTrigger
   - Rotator1
   - Rotator2
+  - obje
   layers:
   - Default
   - TransparentFX

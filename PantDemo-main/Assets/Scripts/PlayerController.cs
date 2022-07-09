@@ -26,14 +26,16 @@ public class PlayerController : MonoBehaviour
 
     public bool _isRun;
 
-    
+
+
+
     void Move()
     {
         if (_isRun)
         {
             transform.Translate(transform.forward * Time.deltaTime * _speed);
         }
-           
+
 
 
     }
@@ -48,7 +50,7 @@ public class PlayerController : MonoBehaviour
             Vector3 target = new Vector3(_amount, transform.position.y, transform.position.z);
             transform.position = Vector3.Lerp(transform.position, target, _smoot);
         }
-        
+
 
     }
 
@@ -80,6 +82,7 @@ public class PlayerController : MonoBehaviour
     {
         _rigid = GetComponent<Rigidbody>();
         _playerSpawn = transform.position;
+        
     }
 
 

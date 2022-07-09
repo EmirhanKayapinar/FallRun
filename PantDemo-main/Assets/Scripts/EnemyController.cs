@@ -10,10 +10,10 @@ public class EnemyController : MonoBehaviour
      Rigidbody _rigid;
     public Vector3 _enemySpawn;
     bool _isHit;
-    bool _hareket;
+    public bool _isFinish;
     void Run()
     {
-        if (!_isHit)
+        if (!_isHit&& !_isFinish)
         {
             transform.position += new Vector3(0, 0, 2 * Time.deltaTime);
             _enemyAnim.SetBool("__isRun", true);
